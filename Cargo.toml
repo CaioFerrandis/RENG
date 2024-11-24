@@ -1,0 +1,12 @@
+[package]
+name = "engine1"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gl = "0.14.0"
+glam = "0.29.0"
+glfw = "0.58.0"
+image = "0.25.2"
+imgui = "0.12.0"
+rand = "0.8.5"
