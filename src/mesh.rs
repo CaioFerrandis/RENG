@@ -175,6 +175,20 @@ impl Mesh{
             UseProgram(0);
         };
     }
+
+    pub fn destroy(&mut self){
+        unsafe {
+            if self.vao != 0 {
+                gl::DeleteVertexArrays(1, &self.vao);
+            }
+            if self.vbo != 0 {
+                gl::DeleteBuffers(1, &self.vbo);
+            }
+            if self.ebo != 0 {
+                gl::DeleteBuffers(1, &self.ebo);
+            }
+        }
+    }
 }
 
 pub fn get_model_matrix(transform: Transform) -> Mat4{

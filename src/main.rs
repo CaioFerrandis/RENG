@@ -36,7 +36,7 @@ pub fn main() {
     let mut texture_pack: HashMap<usize, u32> = HashMap::default();
     texture_pack.insert(1, make_tex("src/textures/default_tex.png"));
     texture_pack.insert(2, make_tex("src/textures/container.jpg"));
-    texture_pack.insert(3, make_tex("src/textures/grass.png"));
+    texture_pack.insert(3, make_tex("src/textures/grass_sprite.png"));
 
     unsafe{
         LIGHTS.push(Light { position: vec3(0., 0., 0.), color: vec3(1., 1., 1.)/3. });

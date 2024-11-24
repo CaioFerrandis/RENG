@@ -17,9 +17,9 @@ pub struct Camera{
     view: Mat4,
 
     pub position: Vec3,
-    front: Vec3,
-    right: Vec3,
-    up: Vec3,
+    pub front: Vec3,
+    pub right: Vec3,
+    pub up: Vec3,
 
     pub yaw: f32,
     pub pitch: f32,

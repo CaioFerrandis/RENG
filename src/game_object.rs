@@ -9,6 +9,7 @@ pub struct GameObject<T>{
     pub object: T,
     pub transform: Transform,
     pub color: Vec4,
+    pub shape: Shapes,
 }
 
 impl GameObject<Mesh>{
@@ -19,6 +20,7 @@ impl GameObject<Mesh>{
             object: mesh,
             transform,
             color: Vec4::ONE,
+            shape: Shapes::Empty,
         }
     }
 
@@ -29,6 +31,7 @@ impl GameObject<Mesh>{
     pub fn set_shape(&mut self, new_shape: Shapes){
         self.object = make_shape(new_shape, self.transform, self.color);
         self.object.update_mesh();
+        self.shape = new_shape;
     }
 
     pub fn set_position(&mut self, position: Vec3){
@@ -86,6 +89,7 @@ impl GameObject<Line>{
             object: Line::new(begin, end, Vec4::ONE, bidimensional),
             transform: Transform::new(),
             color: Vec4::ONE,
+            shape: Shapes::Line,
         }
     }
 

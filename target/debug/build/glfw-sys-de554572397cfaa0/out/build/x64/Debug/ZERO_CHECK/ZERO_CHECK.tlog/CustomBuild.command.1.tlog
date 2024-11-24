@@ -1,0 +1,10 @@
+^C:\USERS\FERRA\RUST\RENG1\TARGET\DEBUG\BUILD\GLFW-SYS-DE554572397CFAA0\OUT\BUILD\CMAKEFILES\498F2BA1F7835A122C04CEFA31F56ABE\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ferra/.cargo/registry/src/index.crates.io-6f17d22bba15001f/glfw-sys-5.0.0+3.3.9/glfw -BC:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/GLFW.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

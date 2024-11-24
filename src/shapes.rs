@@ -2,6 +2,7 @@ use glam::{vec2, vec3, vec4, Vec2, Vec3, Vec4};
 
 use crate::{mesh::Mesh, shader::Shader, transform::Transform, vertex::Vertex};
 
+#[derive(Copy, Clone)]
 pub enum Shapes{
     Circle,
     Quad,
@@ -9,10 +10,15 @@ pub enum Shapes{
     Sphere,
     Triangle,
     Line,
+    Empty,
 }
 
 pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Mesh{
     match shape{
+        Shapes::Empty => {
+            Mesh::new(Vec::new(), Vec::new(), Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))
+        }
+        
         Shapes::Circle => {
             let mut vertices = Vec::new();
             let mut indices = Vec::new();

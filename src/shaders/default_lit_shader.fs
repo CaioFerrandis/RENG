@@ -30,7 +30,7 @@ void main()
         // Diffuse
         vec3 norm = normalize(transformedNormal);
         vec3 lightDir = normalize(lightPos[i] - FragPos);
-        float diff = max(dot(norm, lightDir), 0.0);
+        float diff = abs(dot(norm, lightDir));
         diffuse += lightColor[i] * diff;
         
         // Specular

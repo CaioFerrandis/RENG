@@ -1,0 +1,10 @@
+^C:\USERS\FERRA\RUST\RENG1\TARGET\DEBUG\BUILD\GLFW-SYS-DE554572397CFAA0\OUT\BUILD\CMAKEFILES\498F2BA1F7835A122C04CEFA31F56ABE\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
