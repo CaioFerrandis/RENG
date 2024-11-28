@@ -36,7 +36,7 @@ fn main() {
     let mut changed_cursor = false;
 
     let mut dragging = false;
-    let mut ray = raycast(view_position, window.camera.get_forward_vec(), 100., vec![test_obj.clone()]);
+    let mut ray = raycast(view_position, window.camera.front, 100., vec![test_obj.clone()]);
     let mut dist = 0.;
     let mut last_click = 0.;
     let wait_between_clicks = 1.;
@@ -64,7 +64,7 @@ fn main() {
         if window.mouse_buttons[0] && window.time - last_click >= wait_between_clicks{
             last_click = window.time;
             if !dragging{
-                ray = raycast(view_position, window.camera.get_forward_vec(), 100., vec![test_obj.clone()]);
+                ray = raycast(view_position, window.camera.front, 100., vec![test_obj.clone()]);
                 if !ray.is_empty() {
                     dragging = true;
             
@@ -78,7 +78,8 @@ fn main() {
         }
 
         if dragging && !ray.is_empty(){
-            test_obj.set_position(view_position+dist*window.camera.get_forward_vec());
+            let new_pos = view_position+dist*window.camera.front;
+            test_obj.set_position(math::lerp(test_obj.transform.position, new_pos, window.dt*5.));
         }
 
         test_obj.draw(&view_position);
