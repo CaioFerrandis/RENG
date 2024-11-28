@@ -76,6 +76,10 @@ impl Camera{
         }
     }
 
+    pub fn get_forward_vec(&self) -> Vec3{
+        -glam::Vec3::new(self.view.x_axis.z, self.view.y_axis.z, self.view.z_axis.z)
+    }
+
     pub fn movement(&mut self, keyboard: HashMap<Key, Action>, dt: f32){
         if keyboard[&Key::W] == Action::Press || keyboard[&Key::W] == Action::Repeat{
             self.position += self.movement_speed * dt * self.front; 

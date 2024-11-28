@@ -11,6 +11,7 @@ mod texture;
 mod transform;
 mod vertex;
 pub mod collision;
+mod raycast;
 
 pub use window::*;
 pub use shader::*;
@@ -24,3 +25,4 @@ pub use mesh::*;
 pub use texture::*;
 pub use transform::*;
 pub use vertex::*;
+pub use raycast::*;

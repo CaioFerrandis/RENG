@@ -5,6 +5,7 @@ use glam::{vec4, Mat4, Vec2, Vec3, Vec4};
 
 use crate::{bind_buffer, camera::{PROJ_MATRIX, VIEW_MATRIX}, gen_attrib_pointers, light::LIGHTS, shader::Shader, texture::make_tex, transform::Transform, vertex::Vertex, window};
 
+#[derive(Clone)]
 pub struct Mesh{
     pub vertices: Vec<Vertex>,
     pub indices: Vec<u32>,
