@@ -3,7 +3,7 @@ use std::{ffi::CString, ptr};
 use gl::{*, types::*};
 use glam::{vec4, Mat4, Vec2, Vec3, Vec4};
 
-use crate::{bind_buffer, camera::{PROJ_MATRIX, VIEW_MATRIX}, gen_attrib_pointers, light::LIGHTS, shader::Shader, texture::make_tex, transform::Transform, vertex::Vertex, window};
+use crate::{bind_buffer, camera::{PROJ_MATRIX, VIEW_MATRIX}, gen_attrib_pointers, light::LIGHTS, shader::Shader, texture::make_tex, transform::Transform, vertex::Vertex};
 
 #[derive(Clone)]
 pub struct Mesh{
@@ -25,8 +25,7 @@ impl Mesh{
         let ebo = 0;
 
         let texture = 0;
-
-        let m = 
+ 
         Mesh {
             vertices,
             indices,
@@ -37,8 +36,7 @@ impl Mesh{
             vao,
             vbo,
             ebo,
-        };
-        m
+        }
     }
 
     pub fn set_texture(&mut self, texture: u32){
@@ -138,14 +136,13 @@ impl Mesh{
         self.shader = Shader::new(vertexPath, fragmentPath)
     }
 
-    pub fn empty() -> Mesh{
-        Mesh::new(vec![Vertex{position: Vec3::ZERO, color: Vec4::ONE, tex_coords: Vec2::ZERO, normal: Vec3::ZERO}],
+    pub fn empty() -> Vec<Mesh>{
+        vec![Mesh::new(
+            vec![Vertex{position: Vec3::ZERO, color: Vec4::ONE, tex_coords: Vec2::ZERO, normal: Vec3::ZERO}],
             vec![0],
-            Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))
+            Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs")
+        )]
     }
-
-    // TODO: implement this later!!!
-    //pub fn set_shader(&mut self, )
 
     pub fn draw(&self, view_position: Vec3, transform: Transform){
         unsafe {

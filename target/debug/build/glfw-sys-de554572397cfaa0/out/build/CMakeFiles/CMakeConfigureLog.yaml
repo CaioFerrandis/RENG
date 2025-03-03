@@ -24,7 +24,7 @@ events:
       The output was:
       0
       Versão do MSBuild 17.9.8+b34f75857 para .NET Framework
-      Compilação de 24/11/2024 00:10:53 iniciada.
+      Compilação de 02/03/2025 00:37:31 iniciada.
       
       Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\3.30.1\\CompilerIdC\\CompilerIdC.vcxproj" no nó 1 (destinos padrão).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           0 Aviso(s)
           0 Erro(s)
       
-      Tempo Decorrido 00:00:01.72
+      Tempo Decorrido 00:00:04.43
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -72,8 +72,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-umqil7"
-      binary: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-umqil7"
+      source: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-dfrc8n"
+      binary: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-dfrc8n"
     cmakeVariables:
       CMAKE_C_FLAGS: " -nologo -MD -Brepro"
       CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
@@ -82,37 +82,37 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-umqil7'
+        Change Dir: 'C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-dfrc8n'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b0a22.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_cd45d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versão do MSBuild 17.9.8+b34f75857 para .NET Framework
-        Compilação de 24/11/2024 00:10:55 iniciada.
+        Compilação de 02/03/2025 00:37:38 iniciada.
         
-        Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-umqil7\\cmTC_b0a22.vcxproj" no nó 1 (destinos padrão).
+        Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dfrc8n\\cmTC_cd45d.vcxproj" no nó 1 (destinos padrão).
         PrepareForBuild:
-          Criando o diretório "cmTC_b0a22.dir\\Debug\\".
+          Criando o diretório "cmTC_cd45d.dir\\Debug\\".
           A saída estruturada está habilitada. A formatação do diagnóstico do compilador refletirá a hierarquia de erros. Consulte https://aka.ms/cpp/structured-output para obter mais detalhes.
-          Criando o diretório "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-umqil7\\Debug\\".
-          Criando o diretório "cmTC_b0a22.dir\\Debug\\cmTC_b0a22.tlog\\".
+          Criando o diretório "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dfrc8n\\Debug\\".
+          Criando o diretório "cmTC_cd45d.dir\\Debug\\cmTC_cd45d.tlog\\".
         InitializeBuildStatus:
-          Criando "cmTC_b0a22.dir\\Debug\\cmTC_b0a22.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
-          Tocando "cmTC_b0a22.dir\\Debug\\cmTC_b0a22.tlog\\unsuccessfulbuild".
+          Criando "cmTC_cd45d.dir\\Debug\\cmTC_cd45d.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_cd45d.dir\\Debug\\cmTC_cd45d.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W1 /WX- /diagnostics:column /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b0a22.dir\\Debug\\\\" /Fd"cmTC_b0a22.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W1 /WX- /diagnostics:column /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cd45d.dir\\Debug\\\\" /Fd"cmTC_cd45d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-umqil7\\Debug\\cmTC_b0a22.exe" /INCREMENTAL /ILK:"cmTC_b0a22.dir\\Debug\\cmTC_b0a22.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-umqil7/Debug/cmTC_b0a22.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-umqil7/Debug/cmTC_b0a22.lib" /MACHINE:X64  /machine:x64 cmTC_b0a22.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_b0a22.vcxproj -> C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-umqil7\\Debug\\cmTC_b0a22.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dfrc8n\\Debug\\cmTC_cd45d.exe" /INCREMENTAL /ILK:"cmTC_cd45d.dir\\Debug\\cmTC_cd45d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-dfrc8n/Debug/cmTC_cd45d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-dfrc8n/Debug/cmTC_cd45d.lib" /MACHINE:X64  /machine:x64 cmTC_cd45d.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_cd45d.vcxproj -> C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dfrc8n\\Debug\\cmTC_cd45d.exe
         FinalizeBuildStatus:
-          Excluindo o arquivo "cmTC_b0a22.dir\\Debug\\cmTC_b0a22.tlog\\unsuccessfulbuild".
-          Tocando "cmTC_b0a22.dir\\Debug\\cmTC_b0a22.tlog\\cmTC_b0a22.lastbuildstate".
-        Projeto de compilação pronto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-umqil7\\cmTC_b0a22.vcxproj" (destinos padrão).
+          Excluindo o arquivo "cmTC_cd45d.dir\\Debug\\cmTC_cd45d.tlog\\unsuccessfulbuild".
+          Tocando "cmTC_cd45d.dir\\Debug\\cmTC_cd45d.tlog\\cmTC_cd45d.lastbuildstate".
+        Projeto de compilação pronto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dfrc8n\\cmTC_cd45d.vcxproj" (destinos padrão).
         
         Compilação com êxito.
             0 Aviso(s)
             0 Erro(s)
         
-        Tempo Decorrido 00:00:02.60
+        Tempo Decorrido 00:00:04.12
         
       exitCode: 0
   -
@@ -154,8 +154,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-xupi8w"
-      binary: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-xupi8w"
+      source: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-qrogae"
+      binary: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-qrogae"
     cmakeVariables:
       CMAKE_C_FLAGS: " -nologo -MD -Brepro"
       CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
@@ -165,37 +165,37 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-xupi8w'
+        Change Dir: 'C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-qrogae'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0451d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6b831.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versão do MSBuild 17.9.8+b34f75857 para .NET Framework
-        Compilação de 24/11/2024 00:10:58 iniciada.
+        Compilação de 02/03/2025 00:37:44 iniciada.
         
-        Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\cmTC_0451d.vcxproj" no nó 1 (destinos padrão).
+        Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\cmTC_6b831.vcxproj" no nó 1 (destinos padrão).
         PrepareForBuild:
-          Criando o diretório "cmTC_0451d.dir\\Debug\\".
+          Criando o diretório "cmTC_6b831.dir\\Debug\\".
           A saída estruturada está habilitada. A formatação do diagnóstico do compilador refletirá a hierarquia de erros. Consulte https://aka.ms/cpp/structured-output para obter mais detalhes.
-          Criando o diretório "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\Debug\\".
-          Criando o diretório "cmTC_0451d.dir\\Debug\\cmTC_0451d.tlog\\".
+          Criando o diretório "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\Debug\\".
+          Criando o diretório "cmTC_6b831.dir\\Debug\\cmTC_6b831.tlog\\".
         InitializeBuildStatus:
-          Criando "cmTC_0451d.dir\\Debug\\cmTC_0451d.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
-          Tocando "cmTC_0451d.dir\\Debug\\cmTC_0451d.tlog\\unsuccessfulbuild".
+          Criando "cmTC_6b831.dir\\Debug\\cmTC_6b831.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_6b831.dir\\Debug\\cmTC_6b831.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W1 /WX- /diagnostics:column /D _MBCS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0451d.dir\\Debug\\\\" /Fd"cmTC_0451d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\src.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W1 /WX- /diagnostics:column /D _MBCS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6b831.dir\\Debug\\\\" /Fd"cmTC_6b831.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\src.c"
           src.c
-        C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\src.c(1,10): error C1083: Não é possível abrir arquivo incluir: 'pthread.h': No such file or directory [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\cmTC_0451d.vcxproj]
-        Projeto de compilação pronto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\cmTC_0451d.vcxproj" (destinos padrão) -- FALHA.
+        C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\src.c(1,10): error C1083: Não é possível abrir arquivo incluir: 'pthread.h': No such file or directory [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\cmTC_6b831.vcxproj]
+        Projeto de compilação pronto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\cmTC_6b831.vcxproj" (destinos padrão) -- FALHA.
         
         FALHA da compilação.
         
-        "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\cmTC_0451d.vcxproj" (destino padrão) (1) ->
+        "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\cmTC_6b831.vcxproj" (destino padrão) (1) ->
         (ClCompile destino) -> 
-          C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\src.c(1,10): error C1083: Não é possível abrir arquivo incluir: 'pthread.h': No such file or directory [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xupi8w\\cmTC_0451d.vcxproj]
+          C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\src.c(1,10): error C1083: Não é possível abrir arquivo incluir: 'pthread.h': No such file or directory [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qrogae\\cmTC_6b831.vcxproj]
         
             0 Aviso(s)
             1 Erro(s)
         
-        Tempo Decorrido 00:00:02.62
+        Tempo Decorrido 00:00:03.23
         
       exitCode: 1
   -
@@ -208,8 +208,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-159b4q"
-      binary: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-159b4q"
+      source: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-o0zpwf"
+      binary: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-o0zpwf"
     cmakeVariables:
       CMAKE_C_FLAGS: " -nologo -MD -Brepro"
       CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
@@ -219,39 +219,39 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-159b4q'
+        Change Dir: 'C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-o0zpwf'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7d522.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b3349.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versão do MSBuild 17.9.8+b34f75857 para .NET Framework
-        Compilação de 24/11/2024 00:11:01 iniciada.
+        Compilação de 02/03/2025 00:37:49 iniciada.
         
-        Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-159b4q\\cmTC_7d522.vcxproj" no nó 1 (destinos padrão).
+        Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o0zpwf\\cmTC_b3349.vcxproj" no nó 1 (destinos padrão).
         PrepareForBuild:
-          Criando o diretório "cmTC_7d522.dir\\Debug\\".
+          Criando o diretório "cmTC_b3349.dir\\Debug\\".
           A saída estruturada está habilitada. A formatação do diagnóstico do compilador refletirá a hierarquia de erros. Consulte https://aka.ms/cpp/structured-output para obter mais detalhes.
-          Criando o diretório "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-159b4q\\Debug\\".
-          Criando o diretório "cmTC_7d522.dir\\Debug\\cmTC_7d522.tlog\\".
+          Criando o diretório "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o0zpwf\\Debug\\".
+          Criando o diretório "cmTC_b3349.dir\\Debug\\cmTC_b3349.tlog\\".
         InitializeBuildStatus:
-          Criando "cmTC_7d522.dir\\Debug\\cmTC_7d522.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
-          Tocando "cmTC_7d522.dir\\Debug\\cmTC_7d522.tlog\\unsuccessfulbuild".
+          Criando "cmTC_b3349.dir\\Debug\\cmTC_b3349.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_b3349.dir\\Debug\\cmTC_b3349.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W1 /WX- /diagnostics:column /D _MBCS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7d522.dir\\Debug\\\\" /Fd"cmTC_7d522.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-159b4q\\CheckFunctionExists.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W1 /WX- /diagnostics:column /D _MBCS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b3349.dir\\Debug\\\\" /Fd"cmTC_b3349.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o0zpwf\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-159b4q\\Debug\\cmTC_7d522.exe" /INCREMENTAL /ILK:"cmTC_7d522.dir\\Debug\\cmTC_7d522.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-159b4q/Debug/cmTC_7d522.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-159b4q/Debug/cmTC_7d522.lib" /MACHINE:X64  /machine:x64 cmTC_7d522.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthreads.lib' [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-159b4q\\cmTC_7d522.vcxproj]
-        Projeto de compilação pronto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-159b4q\\cmTC_7d522.vcxproj" (destinos padrão) -- FALHA.
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o0zpwf\\Debug\\cmTC_b3349.exe" /INCREMENTAL /ILK:"cmTC_b3349.dir\\Debug\\cmTC_b3349.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-o0zpwf/Debug/cmTC_b3349.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-o0zpwf/Debug/cmTC_b3349.lib" /MACHINE:X64  /machine:x64 cmTC_b3349.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthreads.lib' [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o0zpwf\\cmTC_b3349.vcxproj]
+        Projeto de compilação pronto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o0zpwf\\cmTC_b3349.vcxproj" (destinos padrão) -- FALHA.
         
         FALHA da compilação.
         
-        "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-159b4q\\cmTC_7d522.vcxproj" (destino padrão) (1) ->
+        "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o0zpwf\\cmTC_b3349.vcxproj" (destino padrão) (1) ->
         (Link destino) -> 
-          LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthreads.lib' [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-159b4q\\cmTC_7d522.vcxproj]
+          LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthreads.lib' [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-o0zpwf\\cmTC_b3349.vcxproj]
         
             0 Aviso(s)
             1 Erro(s)
         
-        Tempo Decorrido 00:00:01.18
+        Tempo Decorrido 00:00:02.91
         
       exitCode: 1
   -
@@ -264,8 +264,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-rmsc8w"
-      binary: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-rmsc8w"
+      source: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-bzy8rl"
+      binary: "C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-bzy8rl"
     cmakeVariables:
       CMAKE_C_FLAGS: " -nologo -MD -Brepro"
       CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
@@ -275,39 +275,39 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-rmsc8w'
+        Change Dir: 'C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-bzy8rl'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8b599.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8d08b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versão do MSBuild 17.9.8+b34f75857 para .NET Framework
-        Compilação de 24/11/2024 00:11:03 iniciada.
+        Compilação de 02/03/2025 00:37:53 iniciada.
         
-        Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rmsc8w\\cmTC_8b599.vcxproj" no nó 1 (destinos padrão).
+        Projeto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bzy8rl\\cmTC_8d08b.vcxproj" no nó 1 (destinos padrão).
         PrepareForBuild:
-          Criando o diretório "cmTC_8b599.dir\\Debug\\".
+          Criando o diretório "cmTC_8d08b.dir\\Debug\\".
           A saída estruturada está habilitada. A formatação do diagnóstico do compilador refletirá a hierarquia de erros. Consulte https://aka.ms/cpp/structured-output para obter mais detalhes.
-          Criando o diretório "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rmsc8w\\Debug\\".
-          Criando o diretório "cmTC_8b599.dir\\Debug\\cmTC_8b599.tlog\\".
+          Criando o diretório "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bzy8rl\\Debug\\".
+          Criando o diretório "cmTC_8d08b.dir\\Debug\\cmTC_8d08b.tlog\\".
         InitializeBuildStatus:
-          Criando "cmTC_8b599.dir\\Debug\\cmTC_8b599.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
-          Tocando "cmTC_8b599.dir\\Debug\\cmTC_8b599.tlog\\unsuccessfulbuild".
+          Criando "cmTC_8d08b.dir\\Debug\\cmTC_8d08b.tlog\\unsuccessfulbuild" porque "AlwaysCreate" foi especificado.
+          Tocando "cmTC_8d08b.dir\\Debug\\cmTC_8d08b.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W1 /WX- /diagnostics:column /D _MBCS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8b599.dir\\Debug\\\\" /Fd"cmTC_8b599.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rmsc8w\\CheckFunctionExists.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /nologo /W1 /WX- /diagnostics:column /D _MBCS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8d08b.dir\\Debug\\\\" /Fd"cmTC_8d08b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bzy8rl\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rmsc8w\\Debug\\cmTC_8b599.exe" /INCREMENTAL /ILK:"cmTC_8b599.dir\\Debug\\cmTC_8b599.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-rmsc8w/Debug/cmTC_8b599.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-rmsc8w/Debug/cmTC_8b599.lib" /MACHINE:X64  /machine:x64 cmTC_8b599.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthread.lib' [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rmsc8w\\cmTC_8b599.vcxproj]
-        Projeto de compilação pronto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rmsc8w\\cmTC_8b599.vcxproj" (destinos padrão) -- FALHA.
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bzy8rl\\Debug\\cmTC_8d08b.exe" /INCREMENTAL /ILK:"cmTC_8d08b.dir\\Debug\\cmTC_8d08b.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-bzy8rl/Debug/cmTC_8d08b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/CMakeScratch/TryCompile-bzy8rl/Debug/cmTC_8d08b.lib" /MACHINE:X64  /machine:x64 cmTC_8d08b.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthread.lib' [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bzy8rl\\cmTC_8d08b.vcxproj]
+        Projeto de compilação pronto "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bzy8rl\\cmTC_8d08b.vcxproj" (destinos padrão) -- FALHA.
         
         FALHA da compilação.
         
-        "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rmsc8w\\cmTC_8b599.vcxproj" (destino padrão) (1) ->
+        "C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bzy8rl\\cmTC_8d08b.vcxproj" (destino padrão) (1) ->
         (Link destino) -> 
-          LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthread.lib' [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rmsc8w\\cmTC_8b599.vcxproj]
+          LINK : fatal error LNK1104: não é possível abrir o arquivo 'pthread.lib' [C:\\Users\\ferra\\rust\\reng1\\target\\debug\\build\\glfw-sys-de554572397cfaa0\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bzy8rl\\cmTC_8d08b.vcxproj]
         
             0 Aviso(s)
             1 Erro(s)
         
-        Tempo Decorrido 00:00:01.04
+        Tempo Decorrido 00:00:03.53
         
       exitCode: 1
 ...

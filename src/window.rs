@@ -105,7 +105,7 @@ impl Window{
         self.time += self.dt;
 
         unsafe{
-            PROJ_MATRIX = self.camera.get_view_matrix();
+            PROJ_MATRIX = self.camera.view;
         }
         self.camera.update_matrix(self.w as f32, self.h as f32);
 

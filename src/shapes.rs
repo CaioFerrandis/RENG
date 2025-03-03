@@ -13,10 +13,10 @@ pub enum Shapes{
     Empty,
 }
 
-pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Mesh{
+pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Vec<Mesh>{
     match shape{
         Shapes::Empty => {
-            Mesh::new(Vec::new(), Vec::new(), Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))
+            vec![Mesh::new(Vec::new(), Vec::new(), Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))]
         }
         
         Shapes::Circle => {
@@ -32,7 +32,7 @@ pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Mesh{
             });
 
             let segments = 64;
-            let radius = 1.0;
+            let radius = 0.5;
 
             // Generate vertices for the circle
             for i in 0..segments {
@@ -70,7 +70,7 @@ pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Mesh{
             indices.push(segments as u32);
             indices.push(1);
 
-            Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))
+            vec![Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))]
         }
 
         Shapes::Sphere => {
@@ -127,7 +127,7 @@ pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Mesh{
                 }
             }
         
-            Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))
+            vec![Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))]
         }        
 
         Shapes::Quad => {
@@ -170,7 +170,7 @@ pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Mesh{
                 2, 3, 0,  // Second triangle
             ];
 
-            Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))
+            vec![Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))]
         }
 
         Shapes::Cube => {
@@ -231,7 +231,7 @@ pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Mesh{
                 20, 21, 22, 22, 23, 20,
             ];
 
-            Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))
+            vec![Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))]
         }
 
         Shapes::Triangle => {
@@ -270,7 +270,7 @@ pub fn make_shape(shape: Shapes, transform: Transform, color: Vec4) -> Mesh{
             indices.push(1);
             indices.push(2);
         
-            Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))
+            vec![Mesh::new(vertices, indices, Shader::new("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs"))]
         }
 
         _ => {

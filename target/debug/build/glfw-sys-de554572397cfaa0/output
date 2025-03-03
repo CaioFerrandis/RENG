@@ -30,8 +30,8 @@ running: "cmake" "C:\\Users\\ferra\\.cargo\\registry\\src\\index.crates.io-6f17d
 -- Looking for pthread_create in pthread - not found
 -- Found Threads: TRUE
 -- Using Win32 for window creation
--- Configuring done (13.5s)
--- Generating done (0.2s)
+-- Configuring done (32.9s)
+-- Generating done (0.5s)
 -- Build files have been written to: C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build
 running: "cmake" "--build" "." "--target" "install" "--config" "Debug" "--parallel" "8"
 Vers∆o do MSBuild 17.9.8+b34f75857 para .NET Framework

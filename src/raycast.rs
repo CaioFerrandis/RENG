@@ -1,13 +1,15 @@
+use core::f32;
+
 use glam::Vec3;
 
-use crate::{GameObject, Mesh, Shapes};
+use crate::{GameObject, mesh::Mesh, Shapes};
 
 pub fn raycast(
     origin: Vec3,
     direction: Vec3,
     max_distance: f32,
-    objects: Vec<GameObject<Mesh>>,
-) -> Vec<(GameObject<Mesh>, f32, Vec3)> {
+    objects: Vec<&GameObject<Mesh>>,
+) -> Vec<(String, f32, Vec3)> {
     let mut collisions = Vec::new();
     
     for object in objects {
@@ -16,7 +18,7 @@ pub fn raycast(
                 if let Some(distance) = ray_sphere_intersection(origin, direction, object.transform.position, object.transform.scale.x) {
                     if distance <= max_distance {
                         let hit_point = origin + direction * distance;
-                        collisions.push((object, distance, hit_point));
+                        collisions.push((object.clone().name, distance, hit_point));
                     }
                 }
             }
@@ -30,7 +32,7 @@ pub fn raycast(
                 if let Some(distance) = ray_cube_intersection(origin, direction, cube_min, cube_max) {
                     if distance <= max_distance {
                         let hit_point = origin + direction * distance;
-                        collisions.push((object, distance, hit_point));
+                        collisions.push((object.clone().name, distance, hit_point));
                     }
                 }
             }
@@ -39,6 +41,24 @@ pub fn raycast(
     }
 
     collisions
+}
+
+pub fn closest_raycast(
+    origin: Vec3,
+    direction: Vec3,
+    max_distance: f32,
+    objects: Vec<&GameObject<Mesh>>,
+) -> Option<(String, f32, Vec3)> {
+    let hits = raycast(origin, direction, max_distance, objects);
+
+    let mut closest: Option<(String, f32, Vec3)> = None;
+
+    for hit in hits{
+        if !closest.is_some() || closest.clone().unwrap().1 > hit.1{
+            closest = Some(hit);
+        }
+    }
+    closest
 }
 
 fn ray_sphere_intersection(

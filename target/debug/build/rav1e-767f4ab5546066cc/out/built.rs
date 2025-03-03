@@ -48,10 +48,10 @@ pub const HOST: &str = r"x86_64-pc-windows-msvc";
 pub const PROFILE: &str = r"debug";
 #[doc=r#"The compiler that cargo resolved to use."#]
 #[allow(dead_code)]
-pub const RUSTC: &str = r"rustc";
+pub const RUSTC: &str = r"C:\\Users\\ferra\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\rustc.exe";
 #[doc=r#"The documentation generator that cargo resolved to use."#]
 #[allow(dead_code)]
-pub const RUSTDOC: &str = r"rustdoc";
+pub const RUSTDOC: &str = r"C:\\Users\\ferra\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin\\rustdoc.exe";
 #[doc=r#"Value of OPT_LEVEL for the profile used during compilation."#]
 #[allow(dead_code)]
 pub const OPT_LEVEL: &str = r"0";
@@ -73,10 +73,10 @@ pub const FEATURES_LOWERCASE: [&str; 0] = [];
 #[doc=r#"The feature-string as above, from lowercase strings."#]
 #[allow(dead_code)]
 pub const FEATURES_LOWERCASE_STR: &str = r"";
-#[doc=r#"The output of `rustc -V`"#]
+#[doc=r#"The output of `C:\Users\ferra\.rustup\toolchains\stable-x86_64-pc-windows-msvc\bin\rustc.exe -V`"#]
 #[allow(dead_code)]
 pub const RUSTC_VERSION: &str = r"rustc 1.82.0 (f6e511eec 2024-10-15)";
-#[doc=r#"The output of `rustdoc -V`; empty string if `rustdoc -V` failed to execute"#]
+#[doc=r#"The output of `C:\Users\ferra\.rustup\toolchains\stable-x86_64-pc-windows-msvc\bin\rustdoc.exe -V`; empty string if `C:\Users\ferra\.rustup\toolchains\stable-x86_64-pc-windows-msvc\bin\rustdoc.exe -V` failed to execute"#]
 #[allow(dead_code)]
 pub const RUSTDOC_VERSION: &str = r"rustdoc 1.82.0 (f6e511eec 2024-10-15)";
 #[doc=r#"The target architecture, given by `CARGO_CFG_TARGET_ARCH`."#]

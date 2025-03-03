@@ -1,6 +1,6 @@
 pub use glam::*;
 
-use crate::{get_model_matrix, GameObject, Mesh, Shapes};
+use crate::{mesh::get_model_matrix, GameObject, mesh::Mesh, Shapes};
 
 pub trait Volume {
     fn collide(&self, p: Vec3,) -> bool;

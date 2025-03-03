@@ -6,15 +6,8 @@ use glfw::{Action, Key};
 pub static mut PROJ_MATRIX: Mat4 = Mat4::IDENTITY;
 pub static mut VIEW_MATRIX: Mat4 = Mat4::IDENTITY;
 
-pub enum CameraMovement{
-    FORWARD,
-    BACKWARD,
-    LEFT,
-    RIGHT,
-}
-
 pub struct Camera{
-    view: Mat4,
+    pub view: Mat4,
 
     pub position: Vec3,
     pub front: Vec3,
@@ -62,10 +55,6 @@ impl Camera{
 
             first_mouse: true,
         }
-    }
-
-    pub fn get_view_matrix(&self) -> Mat4{
-        self.view
     }
 
     pub fn update_matrix(&mut self, w: f32, h: f32){

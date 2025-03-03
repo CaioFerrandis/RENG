@@ -9,7 +9,7 @@ uniform mat4 view;
 uniform mat4 model;
 
 out vec3 FragPos;
-out vec3 transformedNormal; // Passing the transformed normal to the fragment shader
+out vec3 transformedNormal;
 out vec4 out_color;
 out vec2 frag_texCoord;
 
@@ -19,7 +19,7 @@ void main()
     FragPos = vec3(model * vec4(position, 1.));
 
     // Pass the transformed normal to the fragment shader
-    transformedNormal = mat3(transpose(inverse(model))) * normal; // Normal transformation
+    transformedNormal = mat3(transpose(inverse(model))) * normal;
     
     // Final position for rendering
     gl_Position = projection * view * model * vec4(position, 1.);
