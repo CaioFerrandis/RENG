@@ -1,7 +1,5 @@
 #![allow(deref_nullptr)]
 
-use gl::{*, types::*};
-
 #[macro_export]
 macro_rules! gen_attrib_pointers {
     ($struct_name:ident, $($index:expr => $field_name:ident: $dimension:expr),*) => {
@@ -21,4 +19,11 @@ macro_rules! bind_buffer {
         let data_ptr = &$data[0] as *const _ as *const std::ffi::c_void;
         BufferData($buffer_type, size, data_ptr, STATIC_DRAW);
     }};
+}
+
+#[macro_export]
+macro_rules! ecs {
+    ($x:expr) => {
+        std::rc::Rc::new(RefCell::new($x))
+    };
 }

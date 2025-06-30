@@ -14,10 +14,10 @@ impl Line{
     pub fn new(begin: Vec3, end: Vec3, color: Vec4, bidimensional: bool) -> Self{
         let mesh: Mesh;
         if bidimensional{
-            mesh = make_line_2d(begin, end, color);
+            mesh = make_line_2d(begin, end, color, Option::None);
         }
         else{
-            mesh = make_line_3d(begin, end, color);
+            mesh = make_line_3d(begin, end, color, Option::None);
         }
         
         Self{
@@ -39,19 +39,22 @@ impl Line{
         self.mesh.update_mesh();
     }
 
+    pub fn set_shader(&mut self, vert_path: &str, frag_path: &str){
+        self.mesh.set_shader(vert_path, frag_path);
+    }
+
     pub fn draw(&self, view_position: Vec3, transform: Transform){
         self.mesh.draw(view_position, transform);
     }
 }
 
-pub fn make_line_2d(begin: Vec3, end: Vec3, color: Vec4) -> Mesh {
+pub fn make_line_2d(begin: Vec3, end: Vec3, color: Vec4, thickness: Option<f32>) -> Mesh {
     let mut vertices = Vec::new();
     let indices = vec![0, 1, 2, 1, 2, 3];
 
-    let line_direction = (end - begin).normalize(); // Calculate direction of the line
-    let width = 0.1; // Set the thickness of the line
+    let line_direction = (end - begin).normalize();
+    let width = thickness.unwrap_or(0.1);
 
-    // Calculate the perpendicular vector to the line direction (in 2D, rotate by 90 degrees)
     let perpendicular = vec3(-line_direction.y, line_direction.x, 0.0) * width;
 
     // Define vertices with offsets based on the perpendicular vector
@@ -86,14 +89,14 @@ pub fn make_line_2d(begin: Vec3, end: Vec3, color: Vec4) -> Mesh {
     Mesh::new(vertices, indices, Shader::new("src/shaders/basic_shader.vs", "src/shaders/basic_shader.fs"))
 }
 
-pub fn make_line_3d(begin: Vec3, end: Vec3, color: Vec4) -> Mesh {
+pub fn make_line_3d(begin: Vec3, end: Vec3, color: Vec4, thickness: Option<f32>) -> Mesh {
     let mut vertices = Vec::new();
     let mut indices = Vec::new();
 
-    let segments = 16; // Number of segments for the cylinder (higher = smoother)
-    let radius = 0.05; // Thickness of the cylinder
+    let segments = 16;
+    let radius = thickness.unwrap_or(0.05);
 
-    let line_direction = (end - begin).normalize(); // Line direction
+    let line_direction = (end - begin).normalize();
 
     // Arbitrary "up" vector that is not parallel to the line direction
     let up = if line_direction.dot(vec3(0.0, 1.0, 0.0)).abs() > 0.99 {
@@ -254,4 +257,22 @@ pub fn update_line_3d(mesh: &mut Mesh, begin: Vec3, end: Vec3, color: Vec4) {
     for vert in mesh.vertices.iter_mut(){
         vert.color = color;
     }
+}
+
+pub fn draw_line_2d(begin: Vec3, end: Vec3, color: Vec4, width: Option<f32>, texture: u32, view_position: Vec3) {
+    let mut mesh = make_line_2d(begin, end, color, width);
+    mesh.set_texture(texture);
+    mesh.setup_mesh();
+
+    mesh.draw(view_position, Transform::new());
+    mesh.destroy();
+}
+
+pub fn draw_line_3d(begin: Vec3, end: Vec3, color: Vec4, width: Option<f32>, texture: u32, view_position: Vec3) {
+    let mut mesh = make_line_3d(begin, end, color, width);
+    mesh.set_texture(texture);
+    mesh.setup_mesh();
+
+    mesh.draw(view_position, Transform::new());
+    mesh.destroy();
 }

@@ -10,11 +10,11 @@ pub mod shapes;
 pub mod texture;
 pub mod transform;
 pub mod vertex;
-pub mod collision;
 pub mod raycast;
 pub mod utilities;
 pub mod model;
 pub mod instance_rendering;
+pub mod ui_renderer;
 
 pub use window::*;
 pub use shader::*;
@@ -31,3 +31,4 @@ pub use vertex::*;
 pub use raycast::*;
 pub use utilities::*;
 pub use model::*;
+pub use ui_renderer::*;

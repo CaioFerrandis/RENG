@@ -1,10 +1,11 @@
-use std::{collections::HashMap, ffi::CString, sync::{Arc, LazyLock, Mutex}, time::Instant};
+use std::{collections::HashMap, time::Instant};
 
-use gl::{BlendFunc, Enable};
-use glam::{vec2, vec3, Mat4, Vec2, Vec3};
-use glfw::{Action, Context, CursorMode, Glfw, GlfwReceiver, Key, MouseButton, PWindow, WindowEvent};
+use gl::{BlendFunc, Clear, ClearColor, Enable, COLOR_BUFFER_BIT, DEPTH_BUFFER_BIT};
+use glam::{vec2, vec3, Vec2, Vec3};
+use glfw::{Action, Context, CursorMode, Glfw, GlfwReceiver, Key, PWindow, WindowEvent};
+use imgui::Ui;
 
-use crate::camera::{Camera, PROJ_MATRIX};
+use crate::{camera::{Camera, PROJ_MATRIX}, ImguiRenderer};
 
 pub struct Window{
     pub w: u32,
@@ -12,7 +13,7 @@ pub struct Window{
     pub window: PWindow,
     glfw: Glfw,
     events: GlfwReceiver<(f64, WindowEvent)>,
-    pub clear_color: Vec3,
+    clear_color: Vec3,
     pub last_mouse_pos: Vec2,
     pub mouse_pos: Vec2,
     pub mouse_buttons: [bool; 8],
@@ -22,6 +23,9 @@ pub struct Window{
     pub time: f32,
     last_time: Instant,
     pub camera: Camera,
+
+    pub imgui: imgui::Context,
+    pub imgui_renderer: ImguiRenderer,
 }
 
 impl Window{
@@ -37,25 +41,36 @@ impl Window{
 
         gl::load_with(|symbol| window.get_proc_address(symbol) as *const _);
 
-        window.make_current();
+        let mut keyboard: HashMap<Key, Action> = HashMap::new();
+        keyboard.insert(Key::W, Action::Release);
+        keyboard.insert(Key::S, Action::Release);
+        keyboard.insert(Key::D, Action::Release);
+        keyboard.insert(Key::A, Action::Release);
+        keyboard.insert(Key::Space, Action::Release);
+        keyboard.insert(Key::LeftControl, Action::Release);
+
         window.set_key_polling(true);
         window.set_mouse_button_polling(true);
         window.set_scroll_polling(true);
         window.set_cursor_pos_polling(true);
         window.set_framebuffer_size_polling(true);
+        
+        window.make_current();
 
-        let mut keyboard = HashMap::new();
+        let mut imgui = imgui::Context::create();
+        imgui.set_ini_filename(None);
 
-        // Populate key_state with all possible Key variants
-        for key in all_keys() {
-            keyboard.insert(key, Action::Release);
-        }
+        let imgui_renderer = ImguiRenderer::new(&mut imgui, |s| {
+            glfw.get_proc_address_raw(s) as *const _
+        });
+
+        let clear_color = vec3(0.15, 0.17, 0.21);
 
         unsafe {
             Enable(gl::DEPTH_TEST);
             Enable(gl::BLEND);
             BlendFunc(gl::SRC_ALPHA, gl::ONE_MINUS_SRC_ALPHA);
-            Enable(gl::FRAMEBUFFER_SRGB);
+            ClearColor(clear_color.x, clear_color.y, clear_color.z, 1.0);
         }
 
         Window {
@@ -64,7 +79,7 @@ impl Window{
             window,
             glfw,
             events,
-            clear_color: vec3(0.01, 0.02, 0.03),
+            clear_color,
             last_mouse_pos: Vec2::ZERO,
             mouse_pos: Vec2::ZERO,
             mouse_buttons: [false; 8],
@@ -74,6 +89,9 @@ impl Window{
             time: 0.,
             last_time: Instant::now(),
             camera: Camera::new(),
+
+            imgui,
+            imgui_renderer,
         }
     }
 
@@ -89,8 +107,13 @@ impl Window{
         else{
             self.window.set_cursor_mode(CursorMode::Normal);
         }
+    }
 
-        //self.camera.fi
+    pub fn set_clear_color(&mut self, color: Vec3){
+        self.clear_color = color;
+        unsafe{
+            ClearColor(self.clear_color.x, self.clear_color.y, self.clear_color.z, 1.0);
+        }
     }
 
     pub fn update(&mut self){
@@ -114,17 +137,43 @@ impl Window{
         self.mouse_scroll[0] = 0.;
         self.mouse_scroll[1] = 0.;
         self.process_events();
-
-        unsafe {
-            gl::Clear(gl::COLOR_BUFFER_BIT | gl::DEPTH_BUFFER_BIT);
-        }
     }
 
     pub fn clear_screen(&self){
         unsafe{
-            gl::ClearColor(self.clear_color.x, self.clear_color.y, self.clear_color.z, 1.0);
-            gl::Clear(gl::COLOR_BUFFER_BIT);
+            Clear(COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT);
         }
+    }
+
+    pub fn update_imgui(&mut self) { // use this AFTER window.update()!!!
+        let io = self.imgui.io_mut();
+        
+        let width = self.w as f32;
+        let height = self.h as f32;
+
+        io.display_size = [width, height];
+        io.update_delta_time(std::time::Duration::from_secs_f32(self.dt));
+        io.mouse_pos = [self.mouse_pos.x, self.mouse_pos.y];
+        io.mouse_down[0] = self.mouse_buttons[0];
+        io.mouse_down[1] = self.mouse_buttons[1];
+        io.mouse_down[2] = self.mouse_buttons[2];
+    }
+
+    pub fn imgui_frame(&mut self) -> &mut Ui {
+        let io = self.imgui.io_mut();
+
+        io.delta_time = self.dt as f32;
+
+        io.display_size = [self.w as f32, self.h as f32];
+
+        self.imgui.frame()
+    }
+
+    pub fn is_pressing(&mut self, key: Key) -> bool{
+        if !self.keyboard.contains_key(&key){
+            self.keyboard.insert(key, Action::Release);
+        }
+        self.keyboard[&key] != Action::Release
     }
 
     pub fn process_events(&mut self) {
@@ -209,130 +258,4 @@ impl Window{
     pub fn set_caption(&mut self, caption: &str){
         self.window.set_title(caption);
     }
-}
-
-// Well this was painful...
-pub fn all_keys() -> Vec<Key>{
-    vec![
-        Key::Space,
-        Key::Apostrophe,
-        Key::Comma,
-        Key::Minus,
-        Key::Period,
-        Key::Slash,
-        Key::Num0,
-        Key::Num1,
-        Key::Num2,
-        Key::Num3,
-        Key::Num4,
-        Key::Num5,
-        Key::Num6,
-        Key::Num7,
-        Key::Num8,
-        Key::Num9,
-        Key::Semicolon,
-        Key::Equal,
-        Key::A,
-        Key::B,
-        Key::C,
-        Key::D,
-        Key::E,
-        Key::F,
-        Key::G,
-        Key::H,
-        Key::I,
-        Key::J,
-        Key::K,
-        Key::L,
-        Key::M,
-        Key::N,
-        Key::O,
-        Key::P,
-        Key::Q,
-        Key::R,
-        Key::S,
-        Key::T,
-        Key::U,
-        Key::V,
-        Key::W,
-        Key::X,
-        Key::Y,
-        Key::Z,
-        Key::LeftBracket,
-        Key::Backslash,
-        Key::RightBracket,
-        Key::GraveAccent,
-        Key::World1,
-        Key::World2,
-        Key::Escape,
-        Key::Enter,
-        Key::Tab,
-        Key::Backspace,
-        Key::Insert,
-        Key::Delete,
-        Key::Right,
-        Key::Left,
-        Key::Down,
-        Key::Up,
-        Key::PageUp,
-        Key::PageDown,
-        Key::Home,
-        Key::End,
-        Key::CapsLock,
-        Key::ScrollLock,
-        Key::NumLock,
-        Key::PrintScreen,
-        Key::Pause,
-        Key::F1,
-        Key::F2,
-        Key::F3,
-        Key::F4,
-        Key::F5,
-        Key::F6,
-        Key::F7,
-        Key::F8,
-        Key::F9,
-        Key::F10,
-        Key::F11,
-        Key::F12,
-        Key::F13,
-        Key::F14,
-        Key::F15,
-        Key::F16,
-        Key::F17,
-        Key::F18,
-        Key::F19,
-        Key::F20,
-        Key::F21,
-        Key::F22,
-        Key::F23,
-        Key::F24,
-        Key::F25,
-        Key::Kp0,
-        Key::Kp1,
-        Key::Kp2,
-        Key::Kp3,
-        Key::Kp4,
-        Key::Kp5,
-        Key::Kp6,
-        Key::Kp7,
-        Key::Kp8,
-        Key::Kp9,
-        Key::KpDecimal,
-        Key::KpDivide,
-        Key::KpMultiply,
-        Key::KpSubtract,
-        Key::KpAdd,
-        Key::KpEnter,
-        Key::KpEqual,
-        Key::LeftShift,
-        Key::LeftControl,
-        Key::LeftAlt,
-        Key::LeftSuper,
-        Key::RightShift,
-        Key::RightControl,
-        Key::RightAlt,
-        Key::RightSuper,
-        Key::Menu,
-    ]
 }

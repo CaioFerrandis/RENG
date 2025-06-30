@@ -1,9 +1,9 @@
 use std::{ffi::CString, ptr};
 
 use gl::{*, types::*};
-use glam::{vec4, Mat4, Vec2, Vec3, Vec4};
+use glam::{Mat4, Vec2, Vec3, Vec4};
 
-use crate::{bind_buffer, camera::{PROJ_MATRIX, VIEW_MATRIX}, gen_attrib_pointers, light::LIGHTS, shader::Shader, texture::make_tex, transform::Transform, vertex::Vertex};
+use crate::{bind_buffer, camera::{PROJ_MATRIX, VIEW_MATRIX}, gen_attrib_pointers, light::LIGHTS, shader::Shader, transform::Transform, vertex::Vertex};
 
 #[derive(Clone)]
 pub struct Mesh{
@@ -132,8 +132,8 @@ impl Mesh{
         self.vertices[0].color
     }
 
-    pub fn set_shader(&mut self, vertexPath: &str, fragmentPath: &str){
-        self.shader = Shader::new(vertexPath, fragmentPath)
+    pub fn set_shader(&mut self, vertex_path: &str, fragment_path: &str){
+        self.shader = Shader::new(vertex_path, fragment_path)
     }
 
     pub fn empty() -> Vec<Mesh>{

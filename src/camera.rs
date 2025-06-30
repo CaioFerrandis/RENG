@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 use glam::{vec3, Mat4, Vec3};
-use glfw::{Action, Key};
+use glfw::{Action, Key, Window};
 
 pub static mut PROJ_MATRIX: Mat4 = Mat4::IDENTITY;
 pub static mut VIEW_MATRIX: Mat4 = Mat4::IDENTITY;
@@ -65,24 +65,24 @@ impl Camera{
         }
     }
 
-    pub fn movement(&mut self, keyboard: HashMap<Key, Action>, dt: f32){
-        if keyboard[&Key::W] == Action::Press || keyboard[&Key::W] == Action::Repeat{
+    pub fn movement(&mut self, keyboard: &HashMap<Key, Action>, dt: f32){
+        if keyboard[&Key::W] != Action::Release{
             self.position += self.movement_speed * dt * self.front; 
         }
-        if keyboard[&Key::S] == Action::Press || keyboard[&Key::S] == Action::Repeat{
+        if keyboard[&Key::S] != Action::Release{
             self.position -= self.movement_speed * dt * self.front; 
         }
-        if keyboard[&Key::Space] == Action::Press || keyboard[&Key::Space] == Action::Repeat{
-            self.position.y += self.movement_speed * dt; // * self.up;
-        }
-        if keyboard[&Key::LeftControl] == Action::Press || keyboard[&Key::LeftControl] == Action::Repeat{
-            self.position.y -= self.movement_speed * dt; // * self.up;
-        }
-        if keyboard[&Key::A] == Action::Press || keyboard[&Key::A] == Action::Repeat{
+        if keyboard[&Key::A] != Action::Release{
             self.position -= self.movement_speed * dt * self.front.cross(self.up).normalize(); 
         }
-        if keyboard[&Key::D] == Action::Press || keyboard[&Key::D] == Action::Repeat{
+        if keyboard[&Key::D] != Action::Release{
             self.position += self.movement_speed * dt * self.front.cross(self.up).normalize(); 
+        }
+        if keyboard[&Key::Space] != Action::Release{
+            self.position.y += self.movement_speed * dt/* * self.up */;
+        }
+        if keyboard[&Key::LeftControl] != Action::Release{
+            self.position.y -= self.movement_speed * dt/* * self.up */;
         }
     }
 

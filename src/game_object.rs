@@ -1,4 +1,4 @@
-use std::{cell::RefCell, rc::Weak, sync::Arc};
+use std::{cell::RefCell, rc::{Rc, Weak}};
 
 use glam::{vec3, EulerRot, Mat3, Mat4, Quat, Vec3, Vec4};
 
@@ -8,20 +8,24 @@ use crate::{line::Line, mesh::Mesh, shapes::{make_shape, Shapes}, transform::Tra
 pub struct GameObject<T>{
     pub object: T,
     pub transform: Transform,
-    pub color: Vec4,
+    color: Vec4,
     pub shape: Shapes,
     pub tag: String,
     pub name: String,
-    pub parent: Option<Weak<RefCell<(GameObject<T>)>>>,
-    pub children: Vec<Arc<RefCell<GameObject<T>>>>,
+    pub parent: Option<Weak<RefCell<GameObject<T>>>>,
+    pub children: Vec<Rc<RefCell<GameObject<T>>>>,
 }
 
 impl GameObject<Vec<Mesh>>{
     pub fn new(meshes: Vec<Mesh>) -> Self{
         let transform = Transform::new();
+        let mut object = meshes;
+        for mesh in object.iter_mut(){
+            mesh.set_shader("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs");
+        }
 
         GameObject{
-            object: meshes,
+            object,
             transform,
             color: Vec4::ONE,
             shape: Shapes::Empty,
@@ -32,12 +36,22 @@ impl GameObject<Vec<Mesh>>{
         }
     }
 
-    pub fn draw(&mut self, view_position: &Vec3){
+    pub fn draw(&self, view_position: Vec3){
         for mesh in self.object.iter(){
-            mesh.draw(*view_position, self.transform);
+            mesh.draw(view_position, self.transform);
         }
+        for child in self.children.iter(){
+            child.borrow().draw(view_position);
+        }
+    }
+
+    pub fn destroy(&mut self){
         for child in self.children.iter_mut(){
-            child.borrow_mut().draw(&view_position);
+            child.borrow_mut().destroy();
+        }
+
+        for mesh in self.object.iter_mut(){
+            mesh.destroy();
         }
     }
 
@@ -78,32 +92,37 @@ impl GameObject<Vec<Mesh>>{
         }
     }
 
-    pub fn scale3D(&mut self, scale: Vec3){
+    pub fn scale3d(&mut self, scale: Vec3){
         self.transform.scale = scale;
 
         for child in self.children.iter_mut(){
-            child.borrow_mut().scale3D(scale);
+            child.borrow_mut().scale3d(scale);
         }
     }
 
-    pub fn local_rotate(&mut self, rotation: Vec3){
-        self.transform.rotation *= Quat::from_euler(EulerRot::XYZ, rotation.x, rotation.y, rotation.z);
+    pub fn local_rotate(&mut self, rotation: Vec3) {
+    // gira localmente
+    self.transform.rotation *= Quat::from_euler(EulerRot::XYZ, rotation.x, rotation.y, rotation.z);
 
-        for child in self.children.iter_mut(){
-            
-            let translate_to_origin = Mat4::from_translation(-self.transform.position);
-            let quat = Quat::from_euler(glam::EulerRot::XYZ, rotation.x, rotation.y, rotation.z);
-            let rotation_matrix = Mat4::from_quat(quat);
-            let translate_back = Mat4::from_translation(self.transform.position);
-            
-            let mut c = child.borrow_mut();
-            let transform = translate_back * rotation_matrix * translate_to_origin;
+    let quat = Quat::from_euler(EulerRot::XYZ, rotation.x, rotation.y, rotation.z);
+    let rot_mat = Mat4::from_quat(quat);
+    let to_origin = Mat4::from_translation(-self.transform.position);
+    let back = Mat4::from_translation(self.transform.position);
+    let transform = back * rot_mat * to_origin;
 
-            let new_pos = transform.transform_point3(c.transform.position);
-            c.local_rotate(rotation);
-            c.set_position(new_pos);
-        }
+    for child in self.children.iter_mut() {
+        let mut c = child.borrow_mut();
+
+        // atualiza posição girando em volta do parent
+        let new_pos = transform.transform_point3(c.transform.position);
+        c.set_position(new_pos);
+
+        // gira o filho localmente também (se quiser que ele gire "em si")
+        c.local_rotate(rotation);
     }
+}
+
+
 
     pub fn global_rotate(&mut self, rotation: Vec3){
         let quat_rotation = Quat::from_euler(EulerRot::XYZ, rotation.x, rotation.y, rotation.z);
@@ -204,8 +223,11 @@ impl GameObject<Vec<Mesh>>{
 
 impl GameObject<Line>{
     pub fn new(begin: Vec3, end: Vec3, bidimensional: bool) -> Self{
+        let mut object = Line::new(begin, end, Vec4::ONE, bidimensional);
+        object.mesh.set_shader("src/shaders/default_lit_shader.vs", "src/shaders/default_lit_shader.fs");
+
         Self{
-            object: Line::new(begin, end, Vec4::ONE, bidimensional),
+            object,
             transform: Transform::new(),
             color: Vec4::ONE,
             shape: Shapes::Line,
@@ -235,16 +257,24 @@ impl GameObject<Line>{
         self.object.mesh.setup_mesh();
     }
 
-    pub fn draw(&mut self, view_position: &Vec3){
-        self.object.draw(*view_position, self.transform);
+    pub fn set_texture(&mut self, texture: u32){
+        self.object.mesh.set_texture(texture);
+    }
+
+    pub fn set_shader(&mut self, vert_path: &str, frag_path: &str){
+        self.object.mesh.set_shader(vert_path, frag_path);
+    }
+
+    pub fn draw(&mut self, view_position: Vec3){
+        self.object.draw(view_position, self.transform);
 
         for child in self.children.iter_mut(){
-            child.borrow_mut().draw(&view_position);
+            child.borrow_mut().draw(view_position);
         }
     }
 }
 
-pub fn quickGO(shape: Shapes, texture: u32) -> GameObject<Vec<Mesh>>{
+pub fn quick_go(shape: Shapes, texture: u32) -> GameObject<Vec<Mesh>>{
     let mut go = GameObject::<Vec<Mesh>>::new(Mesh::empty());
 
     match shape{
