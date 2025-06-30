@@ -1,7 +1,0 @@
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/uninstall.dir
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/INSTALL.dir
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/CMakeFiles/ZERO_CHECK.dir
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/src/CMakeFiles/update_mappings.dir
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/src/CMakeFiles/glfw.dir
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/build/src/CMakeFiles/INSTALL.dir

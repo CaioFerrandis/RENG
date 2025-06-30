@@ -1,8 +1,0 @@
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/lib/glfw3.lib
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/include/GLFW/glfw3.h
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/include/GLFW/glfw3native.h
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/lib/cmake/glfw3/glfw3Config.cmake
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/lib/cmake/glfw3/glfw3ConfigVersion.cmake
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/lib/cmake/glfw3/glfw3Targets.cmake
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/lib/cmake/glfw3/glfw3Targets-debug.cmake
-C:/Users/ferra/rust/reng1/target/debug/build/glfw-sys-de554572397cfaa0/out/lib/pkgconfig/glfw3.pc

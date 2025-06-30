@@ -2,6 +2,12 @@
 name = "reng"
 version = "0.1.0"
 edition = "2021"
+authors = ["Caio <ferrandis.ca@gmail.com>"]
+description = "A simple OpenGL engine with physics, UI, complex model handling and much more!"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/CaioFerrandis/RENG"
+homepage = "https://github.com/CaioFerrandis/RENG"
+documentation = "https://docs.rs/reng"
 
 [dependencies]
 assimp = "0.3.1"
