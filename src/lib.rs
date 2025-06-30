@@ -16,6 +16,8 @@ pub mod model;
 pub mod instance_rendering;
 pub mod ui_renderer;
 
+pub use glfw::*;
+pub use glam::*;
 pub use window::*;
 pub use shader::*;
 pub use macros::*;
