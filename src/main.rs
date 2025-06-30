@@ -19,7 +19,6 @@ use reng::instance_rendering::create_instance_buffer;
 // settings
 const W: u32 = 800;
 const H: u32 = 600;
-const G: Vec3 = vec3(0., -9.81, 0.);
 
 pub fn main() {
     let mut window = Window::new(W, H);
@@ -27,10 +26,6 @@ pub fn main() {
     let mut texture_pack: HashMap<usize, u32> = HashMap::default();
     texture_pack.insert(1, make_tex("src/textures/default_tex.png"));
     texture_pack.insert(2, make_tex("src/textures/container.jpg"));
-    // texture_pack.insert(3, make_tex("src/textures/grass_sprite.png"));
-    // texture_pack.insert(4, make_tex("src/models/revolver/revolver.png"));
-    // texture_pack.insert(5, make_tex("src/models/soda/soda.png"));
-    // texture_pack.insert(6, make_tex("src/models/tetra/tetra.png"));
 
     let mut sphere = quick_go(Shapes::Sphere, texture_pack[&0]);
     sphere.set_color(vec4(1., 0., 0., 1.));
@@ -49,7 +44,7 @@ pub fn main() {
             LIGHTS[0].position = view_position;
         }
 
-        window.camera.movement(&window.keyboard, window.dt);
+        window.movement();
 
         if window.keyboard[&Key::LeftAlt] == Action::Press {
             if !changed_cursor{

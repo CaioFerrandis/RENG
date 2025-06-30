@@ -99,6 +99,10 @@ impl Window{
         self.window.should_close()
     }
 
+    pub fn movement(&mut self){
+        self.camera.movement(&self.keyboard, self.dt);
+    }
+
     pub fn lock_cursor(&mut self){
         if self.window.get_cursor_mode() == CursorMode::Normal{
             self.window.set_cursor_mode(CursorMode::Hidden);
